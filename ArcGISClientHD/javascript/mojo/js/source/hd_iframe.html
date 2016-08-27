@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/init.js"></script>
+	<script>   	 
+	window.onload=LoadHd;
+    function LoadHd(){ 
+  		var url= window.location.href;
+      var parSplit = url.substr(url.indexOf("?")+1);
+	  //console.log(parSplit)
+      var obj = dojo.queryToObject(parSplit);
+      //console.log(obj);
+      for(i in obj)
+      {
+        //console.log(i,obj[i]);
+        //console.log(dojo.byId(i));
+        dojo.byId(i).innerHTML = obj[i];
+      }
+      window.parent.$(".maximize").click();
+      //window.parent.$("a.zoomTo span").click();
+    } 
+  </script>
+<style>
+html{
+  height:100%;
+  width:100%;
+}
+table tr td{
+   font:14px '微软雅黑';
+}
+table tr td:nth-child(odd){
+	white-space:nowrap;
+	text-align:center;
+}
+.active{
+   background-color:#E6F5FE;
+}
+table tr td:nth-child(3){
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+table tr td:nth-child(1){
+	border-right:1px solid #ddd;
+}
+</style>
+</head>
+<body style="height:99%;width:99%">
+<table class="table" style="height:100%;width:100%;border-collapse: collapse">
+<tr>
+  <td >隐患名称：</td>
+  <td id='hdName'></td>
+  <td >管线名称：</td>
+  <td id='lineName'></td>
+</tr>
+<tr class="active">
+  <td >所在市：</td>
+  <td id='city'></td>
+  <td >主管单位：</td>
+  <td id='chargeorg'></td>
+</tr>
+<tr>
+  <td >输油处：</td>
+  <td id='pipeorg'></td>
+  <td >备案类型：</td>
+  <td id='balx'></td>
+</tr>
+<tr class="active">
+  <td >形成时间：</td>
+  <td id='time'></td>
+  <td >隐患位置：</td>
+  <td id='location'></td>
+</tr>
+<tr>
+  <td >隐患类型：</td>
+  <td id='hdType'></td>
+  <td >隐患等级：</td>
+  <td id='hdLevel'></td>
+  
+</tr>
+<tr class="active">
+  
+  <td >隐患当前阶段状态：</td>
+  <td id='station'></td>
+  <td >隐患描述：</td>
+  <td id='desc'></td>
+</tr>
+<tr>
+  
+  <td >整改措施：</td>
+  <td id='solution'></td>
+  <td >整改期限：</td>
+  <td id='timeline'></td>
+</tr>
+</tr>
+</table>
+</body>
+</html>

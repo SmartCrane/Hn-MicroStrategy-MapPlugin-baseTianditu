@@ -1,0 +1,1 @@
+部署后续修改mapconfig/config.json文件，将localserverip改完服务器ip；修改对应的地图服务地址、userid等信息。

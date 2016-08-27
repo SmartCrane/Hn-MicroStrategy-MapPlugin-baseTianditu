@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/init.js"></script>
+<style>
+html{
+  height:100%;
+  width:100%;
+}
+table tr td{
+   font:14px '微软雅黑';
+}
+table tr td:nth-child(odd){
+	white-space:nowrap;
+	text-align:center;
+}
+.active{
+   background-color:#E6F5FE;
+}
+table tr td:nth-child(3){
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+table tr td:nth-child(1){
+	border-right:1px solid #ddd;
+}
+</style>
+</head>
+<body style="height:99%;width:99%">
+<table class="table" style="height:100%;width:100%;border-collapse: collapse;">
+		</tr>
+		  <td>管线</td>
+		  <td id='pipeLine'></td>
+		  <td>管网</td>
+		  <td id='netWork'></td>
+		</tr>
+		<tr class="active">
+		  <td>管网类型</td>
+		  <td id='type'></td>
+		  <td>投产日期</td>
+		  <td id='date'></td>
+		</tr>
+		<tr>
+		  <td>运行状态</td>
+		  <td id='consState'></td>
+		  <td>材质</td>
+		  <td id='material'></td>
+		</tr>
+		<tr class="active">
+		  <td>防腐状况</td>
+		  <td id='situation'></td>
+		  <td>首站</td>
+		  <td id='firtStop'></td>
+		</tr>
+		<tr>
+		  <td>末站</td>
+		  <td id='lastStop'></td>
+		  <td>管理状态</td>
+		  <td id='manageState'></td>
+		</tr>
+		<tr class="active">
+		  <td>管理处</td>
+		  <td id='management'></td>
+		  <td>寿命起始时间</td>
+		  <td id='time'></td>
+		</tr>
+		<tr>
+		  <td>预计失效时间</td>
+		  <td id='outTime'></td>
+		  <td>起止地点</td>
+		  <td id="startTime"></td>
+		</tr>
+		<tr class="active">
+		  <td>管线长度</td>
+		  <td id='linelength'></td>
+		  <td>设计输量</td>
+		  <td id="throughput"></td>
+		</tr>
+		<tr>
+		  <td>管径</td>
+		  <td id='pipeDiameter'></td>
+		  <td>壁厚</td>
+		  <td id="wall"></td>
+		</tr>
+		<tr class="active">
+		  <td>防腐层厚度</td>
+		  <td id='coating'></td>
+		  <td>设计温度</td>
+		  <td id="temperature"></td>
+		</tr>
+		<tr>
+			<td>设计压力</td>
+			<td id="pressure"></td>
+			<td>战场数量</td>
+			<td id="battlefield"></td>
+		</tr>
+		<tr class="active">
+			<td>压气站/泵站</td>
+			<td id="station"></td>
+			<td>清管站数量</td>
+			<td id="pigging "></td>
+		</tr>
+		<tr>
+			<td>线路截断阀室数</td>
+			<td id="chamber"></td>
+			<td>泄露报警系统数</td>
+			<td id="system"></td>
+		</tr>
+</table>
+<script type="text/javascript">
+	(function LoadHd(){ 
+  		var url= window.location.href;
+		var parSplit = url.substr(url.indexOf("?")+1);
+		//console.log(parSplit);
+		var obj = dojo.queryToObject(parSplit);
+		//console.log(obj);
+		window.parent.$(".maximize").click();
+		for(i in obj){
+        //console.log(i,obj[i]);
+        //console.log(dojo.byId(i));
+        dojo.byId(i).innerHTML = obj[i];
+		
+		//console.log(id);
+		}
+    //window.parent.$(".maximize").click();
+	//console.log(window.parent.$(".maximize"));
+	})();
+</script>
+</body>
+</html>

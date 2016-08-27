@@ -1,0 +1,20 @@
+[{
+"TiledMap":"http://10.246.132.249:8080/OneMapServer/rest/services/base-map-image-globe/MapServer",
+"QueryTask":"http://10.175.2.95:6080/arcgis/rest/services/ZNGX_XSHN_GXBT/MapServer/53",
+"DynamicServer":"http://10.175.2.95:6080/arcgis/rest/services/ZNGX_XSHN_GXBT/MapServer/",
+"TaskField":"EVENTID",
+"MetricName":"LineId",
+"ConditionN":"50",
+"ConditionM":"1000",
+
+"userid" : "ASM_00015624a9439f16",
+"tokenurl":"http://10.246.132.249:8080/RemoteTokenServer",
+"username":"sipms",
+"password":"sinopecipms",
+"localserverip":"127.0.0.1",
+"basemapUrl":"http://10.246.132.249:8080/OneMapServer/rest/services/base-tdt-image-globe/WMTS",
+"PipeLineInfo":"http://10.175.2.98/IPMSAPI/PDS/UAS/GetPipeLineInfo",
+"mapServer":"http://10.175.2.95:6080/arcgis/rest/services/ZNGX_XSHN_GXBT/MapServer/",
+"annolayerUrl":"http://10.246.132.249:8080/OneMapServer/rest/services/base-tdt-label-image/WMTS" 
+}]
+

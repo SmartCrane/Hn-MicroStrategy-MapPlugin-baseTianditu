@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>加载天地图 - ArcGIS API for JavaScript </title>
+    <link rel="stylesheet" type="text/css" href="http://localhost/arcgis_js_api/library/3.16/3.16/dijit/themes/tundra/tundra.css"/>
+    <link rel="stylesheet" type="text/css" href="http://localhost/arcgis_js_api/library/3.16/3.16/esri/css/esri.css" />
+
+    <style type="text/css">
+        html,body
+        {
+            width:100%;
+            height:100%;
+            overflow: hidden;
+            border: none;
+        }
+    </style>
+
+    <script type="text/javascript" src="scripts/jquery/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript">
+        window.onerror = (function(err) { alert("出现错误：\r\n" + err); });
+
+        function getRootPath_web() {
+            //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+            var curWwwPath = window.document.location.href;
+            //获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+            var pathName = window.document.location.pathname;
+            var pos = curWwwPath.indexOf(pathName);
+            //获取主机地址，如： http://localhost:8083
+            var localhostPath = curWwwPath.substring(0, pos);
+            //获取带"/"的项目名，如：/uimcardprj
+            var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+            return (localhostPath + projectName);
+        }
+
+        dojoConfig = {//指定自定义的Dojo类存放路径
+            parseOnLoad: true,
+            packages: [{
+                name: 'layerEx',
+                location: getRootPath_web() + "/scripts/layerEx"
+            }]
+        };
+    </script>
+    <script type="text/javascript" src="http://localhost/arcgis_js_api/library/3.16/3.16/init.js"></script>
+    <script type="text/javascript" src="scripts/Default.js" charset="utf-8"></script>
+</head>
+
+<body class="tundra">
+    <div id="mapDiv" style="left: 0px; top: 0px; width:100%; height:100%; position:absolute; z-index: 1;" ></div>
+    <div style="position:absolute; left:80px; z-index: 10 ">
+        <img id="imgRaster" src="images/yximage.png"  alt="影像底图" title="影像底图" style="width: 49px; height: 48px; cursor: pointer;"/>
+        <img id="imgVector" src="images/vector.png"  alt="矢量底图" title="矢量底图" style="width: 49px; height: 48px; cursor: pointer;" />
+        <img id="imgTerrain" src="images/terrain.png"  alt="地形底图" title="地形底图" style="width: 49px; height: 48px; cursor: pointer;" />
+    </div>
+</body>
+</html>

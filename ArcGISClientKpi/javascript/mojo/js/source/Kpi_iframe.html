@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/init.js"></script>
+<style>
+html{
+  height:100%;
+  width:100%;
+}
+table tr td{
+   font:14px '微软雅黑';
+}
+table tr td:nth-child(odd){
+	white-space:nowrap;
+	
+}
+.active{
+   background-color:#E6F5FE;
+}
+table tr td:nth-child(3){
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+table tr td:nth-child(1){
+	border-right:1px solid #ddd;
+}
+</style>
+</head>
+<body style="height:99%;width:99%">
+<table class="table" style="height:100%;width:100%;border-collapse: collapse;text-align:center;">
+		</tr>
+		  <td>管网</td>
+		  <td id='netWork'>西南管网</td>
+		  <td id=''>珠三角管网</td>
+		</tr>
+		<tr class="active">
+		  <td>计划完成</td>
+		  <td id='Plancomplete'>1190</td>
+		   <td id=''>700</td>
+		  
+		</tr>
+		<tr>
+			<td>累计完成</td>
+		  <td id='total'>540.36</td>
+		  <td id=''>369.42</td>
+		</tr>
+
+</table>
+<script type="text/javascript">
+	(function LoadHd(){ 
+  		var url= window.location.href;
+		//console.log(url);
+		var parSplit = url.substr(url.indexOf("?")+1);
+		//console.log(parSplit);
+		var obj = dojo.queryToObject(parSplit);
+		//console.log(obj);
+		//window.parent.$(".maximize").click();
+		for(i in obj){
+        //console.log(i,obj[i]);
+        //console.log(dojo.byId(i));
+        dojo.byId(i).innerHTML = obj[i];
+		
+		//console.log(id);
+		}
+    //window.parent.$(".maximize").click();
+	//console.log(window.parent.$(".maximize"));
+	})();
+</script>
+</body>
+</html>

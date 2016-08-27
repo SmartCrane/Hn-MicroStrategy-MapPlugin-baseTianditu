@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="/arcgis_js_v312_api/arcgis_js_api/library/3.12/3.12/init.js"></script>
+	<script>   	 
+	window.onload=LoadHd;
+    function LoadHd(){ 
+  		var url= window.location.href;
+      var parSplit = url.substr(url.indexOf("?")+1);
+      var obj = dojo.queryToObject(parSplit);
+      //console.log(obj);
+      for(i in obj)
+      {
+        //console.log(i,obj[i]);
+        //console.log(dojo.byId(i));
+        dojo.byId(i).innerHTML = obj[i];
+      }
+      window.parent.$(".maximize").click();
+//	  window.parent.$(".restore").remove();
+//	  <!-- window.parent.$(".titlePane").css("background","#1D5689"); -->
+//	  <!-- overflow-y:hidden -->
+//	  Window.parent.$(".contentPane").css({"padding":"0px 0px 0px 0px","overflow-y":"hidden"});
+//	  window.parent.$(".actionsPane").css("display","none");
+//	  <!-- console.log(window.parent.$(".restore").style.width); -->
+//	  <!-- widows.parent.$(".restore") -->
+      //window.parent.$("a.zoomTo span");
+	  
+    } 
+  </script>
+<style>
+html{
+  height:100%;
+  width:100%;
+}
+table tr td{
+   font:14px '微软雅黑';
+}
+table tr td:nth-child(odd){
+	white-space:nowrap;
+	text-align:center;
+}
+.active{
+   background-color:#E6F5FE;
+}
+table tr td:nth-child(3){
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+table tr td:nth-child(1){
+	border-right:1px solid #ddd;
+}
+</style>
+</head>
+<body style="height:99%;width:99%">
+<table class="table" style="height:100%;width:100%;border-collapse: collapse;">
+<tr>
+</tr>
+  <td>高后果区名称</td>
+  <td id='consNam'></td>
+  <td>高后果类别</td>
+  <td id='category'></td>
+</tr>
+<tr class="active">
+  <td>起始位置</td>
+  <td id='position'></td>
+  <td>起始里程</td>
+  <td id='mileage'></td>
+</tr>
+<tr>
+  <td>终止桩号</td>
+  <td id='pile'></td>
+  <td>终止里程</td>
+  <td id='endPosition'></td>
+</tr>
+<tr class="active">
+  <td>评价类型</td>
+  <td id='type'></td>
+  <td>评价结果</td>
+  <td id='results'></td>
+</tr>
+<tr>
+  <td>监管对策</td>
+  <td id='regulatory'></td>
+  <td>高后果区等级</td>
+  <td id='level'></td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+#legend{
+    z-index:1;
+    width:330px;
+    height:30px;
+    position:absolute;
+    /*margin-left:670px;*/
+    padding: 3px;
+}
+#great{
+	background-color: #ff6611;
+}
+#large{
+	background-color: #feff11;
+}
+#general{
+	background-color: #4170D1;
+}
+.legend{
+	padding: 3px;
+	color:black;
+}

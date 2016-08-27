@@ -1,0 +1,27 @@
+/*
+style definitions for visualization - in this case empty
+*/
+.custom-vis-layout.redialprogress .background {
+    fill: #FFFFFF;
+    fill-opacity: 1;
+}.custom-vis-layout.redialprogress .component {
+    fill: #e1e1e1;
+}.component .custom-vis-layout.redialprogress .label {
+    font-family: Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+    fill: #0000FF;
+}.custom-vis-layout.redialprogress .arc {
+    stroke-weight:0.1;
+    fill: #4e8fff;
+}
+.custom-vis-layout.redialprogress .arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+}
+.label {
+    font-family:  Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+}.custom-vis-layout.redialprogress .radial-svg {
+    display: block;
+    margin: 0 auto;
+}
